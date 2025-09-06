@@ -11,13 +11,13 @@ export default function App() {
   const [newEmail, setNewEmail] = useState("");
 
   // definir nossa uRL do JSON-SERVER
-  const API = "http://10.110.12.33:3000/users";
+  const API = "http://10.110.12.39:3000/users";
 
   // Declarar a função assincrona para adicionar um novo usuário
-  const addUser = async () => { // Corrigido: addUser (não addYsser)
+  const addUser = async () => { 
     try {
       // Faz uma requisição de POST para a API usando o axios diretamente
-      const response = await axios.post(API, { // Adicionado: await
+      const response = await axios.post(API, { 
         name: newName,
         email: newEmail
       });
@@ -33,14 +33,14 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>POST - Adicionar Usuário</Text>
       <TextInput
-        style={styles.input} // Corrigido: input (não imput)
+        style={styles.input} 
         placeholder="Name"
         value={newName}
         onChangeText={setNewName}
       />
-      {/* Definimos a entrada do email - Corrigido: comentário JSX */}
+      
       <TextInput
-        style={styles.input} // Corrigido: input (não imput)
+        style={styles.input} 
         placeholder="email@dominio.com"
         value={newEmail}
         onChangeText={setNewEmail}
@@ -49,7 +49,7 @@ export default function App() {
 
       <Button
         title="Adicionar Usuario"
-        onPress={addUser} // Corrigido: addUser (não addYsser)
+        onPress={addUser} 
       />
       <FlatList
         data={users}
@@ -76,9 +76,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: "center" 
   },
-  input: { // Corrigido: input (não imput)
+  input: { 
     borderWidth: 1, 
-    borderColor: '#ccc', // Corrigido: aspas em '#ccc'
+    borderColor: '#ccc', 
     padding: 8, 
     marginBottom: 8,
     borderRadius: 5
